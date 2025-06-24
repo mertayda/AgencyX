@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #ff8906;
+  --secondary-color: #e5306f;
+  --text-dark: #0e0d16;
+  --text-light: #767268;
+  --extra-light: #f7f8fd;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.responsive-container{
+    max-width: 1200px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+header{
+    width: var(--max-width);
+    margin: auto;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+  padding:  2rem;
+  
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.nav-items{
+    display: flex;
+    gap: 1rem;
+}
+
+.hamburger-btn{
+    display: none;
+}
+
+
+.lets-talk{
+    
+}
+
+
+@media (max-width: 1199px) {
+    .responsive-container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .responsive-container {
+      max-width: 720px;
+    }
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;  
+}
+
+
+.logo{
+    display: blog;
+}
+
+.nav-items{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    flex-direction: column;
+    width: 100%;
+    height: 40vh;
+   transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.nav-items.show{
+ 
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+  .lets-talk{
+    display: none;
+
+  }
+
+  .hamburger-btn{
+    display: block;
+    font-size: 1rem;
+}
+
+
+  }
+  
+  @media (max-width: 767px) {
+    .responsive-container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .responsive-container {
+      max-width: 100%;
+      padding: 0 0.5rem;
+    }
+  }
