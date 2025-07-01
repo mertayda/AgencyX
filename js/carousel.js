@@ -3,10 +3,12 @@ const testimonialSlide = document.querySelectorAll(".testimonial-slide")
 const nextBtn = document.querySelector(".nextBtn")
 const prevBtn = document.querySelector(".prevBtn")
 const sliderPagination = document.querySelector(".slider-pagination")
+const  testimonialsContainer = document.querySelector(".testimonials-container")
 
 let currentIndex = 0;
 let totalIndex = testimonialSlide.length 
 let leap = []
+let autoPlay
 
 
 
@@ -14,23 +16,21 @@ let leap = []
 function updateSlide(){
      const offset = -currentIndex * 100
      testimonials.style.transform = `translateX(${offset}%)`
-      leap.forEach((index,say) => {
-        if(index === currentIndex){
-            say.classList.add("active")
-        }else{
-            say.classList.remove("active")
-        }
+      leap.forEach((dot,index) => {
+          if(index === currentIndex){
+            dot.classList.add("active")
+          } else{
+            dot.classList.remove("active")
+          }
       })
-     
-
-    
-      
+          
 }
 
 
 function updateDots(test){
-    test = currentIndex
+     currentIndex = test
     updateSlide()
+    clearInterval()
 }
 
 
@@ -54,17 +54,48 @@ function nextSlide(){
 
         currentIndex = (currentIndex + 1) % totalIndex
         updateSlide()
+  
 }
 
 
 function prevSlide(){
     currentIndex = (currentIndex === 0) ? totalIndex - 1 : currentIndex - 1
     updateSlide()
+  
 }
 
 
-nextBtn.addEventListener("click",nextSlide)
-prevBtn.addEventListener("click",prevSlide)
+
+
+
+function start(){
+ autoPlay  = setInterval(() => {
+   nextSlide()
+ },3000)
+
+}
+
+
+function stopInterval(){
+
+  clearInterval(autoPlay)
+}
+
+
+
+testimonialsContainer.addEventListener("mouseenter",stopInterval)
+testimonialsContainer.addEventListener("mouseleave",start)
+
+
+nextBtn.addEventListener("click",() => {
+  nextSlide()
+  stopInterval()
+})
+prevBtn.addEventListener("click",() => {
+  prevSlide()
+  stopInterval()
+})
 
 updateSlide()
 createdots()
+start()
