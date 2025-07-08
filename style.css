@@ -74,6 +74,17 @@ header{
   
 }
 
+
+.logo{
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+
+.logo > span{
+  color: var(--primary-color);
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -655,7 +666,7 @@ transition: background-color 0.3s ease, transform 0.2s ease;
   flex-direction: column;
 background-color: var(--secondary-color);
 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
- padding: 5rem 1rem;
+ padding: 3rem 1rem;
  border-radius: 20px;
  position: relative;
  
@@ -680,6 +691,7 @@ box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     background-color: var(--white);
     max-width: 600px;
+    width: 100%;
     padding: 0.6rem;
     border-radius: 10px;
      margin-bottom: 2rem;
@@ -846,6 +858,11 @@ footer{
 
 .footer-card-first > div > h3{
  margin: 0.5rem 0;
+
+}
+
+.footer-card-first  span{
+  color: var(--primary-color);
 }
 
 .social-icons li i{
@@ -856,7 +873,11 @@ footer{
 .footer-card h5{
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  color: var(--text-dark)
 }
+
+
+
 
 .footer-card ul{
   display: flex;
@@ -890,7 +911,12 @@ header{
 
 .logo{
     display: block;
+
+
 }
+
+
+
 
 .nav-items{
     position: absolute;
